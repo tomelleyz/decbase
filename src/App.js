@@ -12,13 +12,36 @@ import imgOfLouis from "./assets/images/louis-saville.jpg";
 import imgOfRekha from "./assets/images/rekha-varadwaz.jpg";
 import blogImg1 from "./assets/images/blog-img1.jpg";
 import blogImg2 from "./assets/images/blog-img2.jpg";
+import facebookIcon from "./assets/icons/facebook-icon.svg";
+import twitterIcon from "./assets/icons/twitter-icon.svg";
+import instagramIcon from "./assets/icons/instagram-icon.svg";
+import linkedinIcon from "./assets/icons/linkedin-icon.svg";
+import { useState } from "react";
+import MobileNav from "./components/MobileNav";
+import Backdrop from "./components/Backdrop";
 
 function App() {
+  const [openMobileNav, setOpenMobileNav] = useState(false);
+
   return (
-    <>
+    <main>
+      {openMobileNav && (
+        <>
+          <Backdrop setOpenMobileNav={setOpenMobileNav} />
+          <MobileNav openMobileNav={openMobileNav} />
+        </>
+      )}
+
       <div className="top-navbar">
         <div className="logo">
           <img src={logo} alt="Decbase logo" />
+        </div>
+        <div className="mobile-menu-btn">
+          <button onClick={() => setOpenMobileNav(true)}>
+            <div></div>
+            <div></div>
+            <div></div>
+          </button>
         </div>
         <nav className="top-navbar-menu">
           <div className="menu-item">HOME</div>
@@ -151,7 +174,7 @@ function App() {
           <div className="testimonial-card-container">
             <div className="testimonial-card">
               <img src={imgOfLouis} alt="Louis Saville" />
-              <div>
+              <div className="testimonial-card-text">
                 <h4>
                   Louis Saville{" "}
                   <span className="job-title">/CEO at Google Inc.</span>
@@ -166,7 +189,7 @@ function App() {
           <div className="testimonial-card-container">
             <div className="testimonial-card">
               <img src={imgOfRekha} alt="Rekha Varadwaz" />
-              <div>
+              <div className="testimonial-card-text">
                 <h4>
                   Rekha Varadwaz{" "}
                   <span className="job-title">/Manager at Nike Inc.</span>
@@ -187,31 +210,118 @@ function App() {
           <h2>From Our Blog</h2>
         </div>
         <div className="blog-cards-group-container">
-          <div className="blog-card-container">
+          <div className="blog-card-container blog-card-container1">
             <div className="blog-card">
               <img src={blogImg1} alt="interior design" />
-              <h4>Latest Interior Design Trends</h4>
-              <p>
+              <h4 className="blog-card-title">Latest Interior Design Trends</h4>
+              <p className="blog-card-body">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod incididunt ut labore et dolore magna aliqua.
               </p>
-              <Button type="primary" action="CONTINUE READING" />
+              <div>
+                <Button type="primary" action="CONTINUE READING" />
+              </div>
             </div>
           </div>
-          <div className="blog-card-container">
+          <div className="blog-card-container blog-card-container2">
             <div className="blog-card">
               <img src={blogImg2} alt="interior design" />
-              <h4>28 Notable Product at ARC Interior Design</h4>
-              <p>
+              <h4 className="blog-card-title">
+                28 Notable Product at ARC Interior Design
+              </h4>
+              <p className="blog-card-body">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod incididunt ut labore et dolore magna aliqua.
               </p>
-              <Button type="primary" action="CONTINUE READING" />
+              <div>
+                <Button type="primary" action="CONTINUE READING" />
+              </div>
             </div>
           </div>
         </div>
       </section>
-    </>
+
+      <section className="newsletter-section">
+        <div className="newsletter-text-container">
+          <div>
+            <h3>Subscribe to Our Newsletter</h3>
+            <hr />
+          </div>
+          <p>
+            Find out early about all upcoming promotions and new product
+            releases with our newsletter.
+          </p>
+          <form>
+            <div className="form-field-group">
+              <input type="email" placeholder="Enter your email address..." />
+              <button
+                onClick={(event) => event.preventDefault()}
+                type="submit"
+                className="btn btn-primary"
+              >
+                SUBSCRIBE
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <footer className="footer-section">
+        <div className="footer-links-container">
+          <div className="single-footer-container footer-logo-container">
+            <img src={logo} alt="Decbase logo" />
+            <p>
+              But i must explain to you all this mistaken idea of dencouncing
+              pleasure.
+            </p>
+          </div>
+          <div className="single-footer-container">
+            <h5>Quick Links</h5>
+            <p>About Our Company</p>
+            <p>Services We Provide</p>
+            <p>Career &amp; Opportunity</p>
+            <p>Privacy &amp; Policy</p>
+            <p>Contact Us</p>
+          </div>
+          <div className="single-footer-container">
+            <h5>Company</h5>
+            <p>About Our Company</p>
+            <p>Our Testimonials</p>
+            <p>Latest News</p>
+            <p>Our Mission</p>
+            <p>Get a Free Quote</p>
+          </div>
+          <div className="single-footer-container">
+            <h5>Contact Us</h5>
+            <p>Sagrada Familia, Herba</p>
+            <p>Street Front USA</p>
+            <p>brandoxide@gmail.com</p>
+            <p>002-568423591</p>
+          </div>
+          <div className="single-footer-container">
+            <h5>Follow Us</h5>
+            <div className="social-links-container">
+              <div className="single-social-link">
+                <img src={facebookIcon} alt="facebook icon" />
+              </div>
+              <div className="single-social-link">
+                <img src={twitterIcon} alt="twitter icon" />
+              </div>
+              <div className="single-social-link">
+                <img src={instagramIcon} alt="instagram icon" />
+              </div>
+              <div className="single-social-link">
+                <img src={linkedinIcon} alt="linkedin icon" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="footer-copyright-section">
+          <hr />
+          <p>Copyright &copy; 2021. Brandoxide. All rights reserved.</p>
+        </div>
+      </footer>
+    </main>
   );
 }
 

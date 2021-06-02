@@ -181,7 +181,7 @@ img {
   align-items: center;
   padding: 2.5rem var(--side-padding);
   background-color: #ffffff;
-  background-image: url(./assets/icons/dotted-pattern.svg);
+  background-image: url(./assets/icons/dotted-pattern2.svg);
   background-position: 0% 100%;
   background-repeat: no-repeat;
 }
@@ -200,7 +200,7 @@ img {
 .services-section {
   padding: var(--section-padding);
   background-color: #ffffff;
-  background-image: url(./assets/icons/dotted-pattern.svg);
+  background-image: url(./assets/icons/dotted-pattern2.svg);
   background-position: 100% 100%;
   background-repeat: no-repeat;
 }
@@ -216,6 +216,7 @@ img {
 .service-card {
   display: flex;
   align-items: flex-start;
+  height: 100%;
   padding: 2.5rem;
   border-radius: 3.75rem 0;
   box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.14);
@@ -232,7 +233,7 @@ img {
   align-items: center;
   padding: var(--section-padding);
   background-color: #ffffff;
-  background-image: url(./assets/icons/dotted-pattern.svg);
+  background-image: url(./assets/icons/dotted-pattern2.svg);
   background-position: 0% 100%;
   background-repeat: no-repeat;
 }
@@ -255,7 +256,7 @@ img {
   padding: var(--section-padding);
   background-color: #ffffff;
   background-image: url(./assets/icons/dotted-pattern.svg);
-  background-position: 100% 108%;
+  background-position: 100% 100%;
   background-repeat: no-repeat;
 }
 .success-years-section-text-container {
@@ -283,7 +284,7 @@ img {
 .completed-work-section {
   background-color: #f8f8f8;
   background-image: url(./assets/icons/dotted-pattern.svg);
-  background-position: 0% 108%;
+  background-position: 0% 100%;
   background-repeat: no-repeat;
   padding: 5rem var(--side-padding) 5.5rem;
 }
@@ -375,7 +376,7 @@ img {
   padding: 5.5rem var(--side-padding);
   background-color: #ffffff;
   background-image: url(./assets/icons/dotted-pattern.svg);
-  background-position: 0% -4.5rem;
+  background-position: 0% 0%;
   background-repeat: no-repeat;
 }
 .testimonials-section-heading {
@@ -421,7 +422,7 @@ img {
   padding: 5.5rem var(--side-padding);
   background-color: #f8f8f8;
   background-image: url(./assets/icons/dotted-pattern.svg);
-  background-position: 100% 110%;
+  background-position: 100% 100%;
   background-repeat: no-repeat;
 }
 .blog-section-heading {
@@ -460,7 +461,7 @@ img {
   background-color: #ffffff;
   background-image: url(./assets/icons/dotted-pattern.svg),
     url(./assets/icons/dotted-pattern.svg);
-  background-position: 100% -4.5rem, 0% 130%;
+  background-position: 100% 0%, 0% 100%;
   background-repeat: no-repeat;
   padding: 5.5rem var(--side-padding);
   text-align: center;
@@ -507,18 +508,17 @@ img {
   padding: 5.5rem var(--side-padding) 0;
   background-color: #f8f8f8;
   background-image: url(./assets/icons/dotted-pattern.svg);
-  background-position: 0% -5rem;
+  background-position: 0% 0%;
   background-repeat: no-repeat;
 }
 .footer-links-container {
   display: flex;
-  flex-flow: row wrap;
 }
 .single-footer-container {
   flex: 0 0 18.75%;
 }
 .footer-logo-container {
-  flex: 0 0 24%;
+  flex: 0 0 25%;
 }
 .single-footer-container,
 .footer-logo-container {
@@ -687,6 +687,9 @@ img {
     flex: 0 1 20%;
     padding: 1rem;
   }
+  .footer-links-container {
+    flex-flow: row wrap;
+  }
   .single-footer-container,
   .footer-logo-container {
     flex: 0 0 100%;
@@ -694,7 +697,7 @@ img {
   }
 }
 
-@media (min-width: 600px) and (max-width: 992px) {
+@media (min-width: 600px) and (max-width: 991.99px) {
   .header-section-text {
     flex: 0 0 80%;
     margin: 0 auto 5rem 0;
@@ -751,6 +754,9 @@ img {
   .footer-logo-container {
     flex: 0 0 55%;
   }
+  .footer-links-container {
+    flex-flow: row wrap;
+  }
   .single-footer-container,
   .footer-logo-container {
     margin-bottom: 2rem;
@@ -769,5 +775,19 @@ img {
   }
   .project-numbers-grid .grid-item {
     padding: 1rem 1.3rem;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1024px) {
+  .testimonial-card-container {
+    flex: 0 0 70%;
+    padding: 3rem 1rem;
+    margin: 0 auto 3rem;
+  }
+}
+
+@media (min-width: 1024.99px) and (max-width: 1200.99px) {
+  .testimonial-card img {
+    margin-left: -30%;
   }
 }

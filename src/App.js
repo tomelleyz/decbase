@@ -1,17 +1,17 @@
 import "./App.css";
 import logo from "./assets/icons/decbase-logo.svg";
-import headerImg from "./assets/images/header-img.jpg";
+import headerImg from "./assets/images/header-img.png";
 import Button from "./components/Button";
 import ServiceCard from "./components/ServiceCard";
 import interiorDesignIcon from "./assets/icons/interior-design-icon.svg";
 import architectureIcon from "./assets/icons/architecture-icon.svg";
 import planningIcon from "./assets/icons/planning-icon.svg";
-import aboutUsImg from "./assets/images/about-us-section-interior-img.jpg";
-import successYearsImg from "./assets/images/success-years-section-interior-img.jpg";
+import aboutUsImg from "./assets/images/about-us-section-interior-img.png";
+import successYearsImg from "./assets/images/success-years-section-interior-img.png";
 import imgOfLouis from "./assets/images/louis-saville.jpg";
 import imgOfRekha from "./assets/images/rekha-varadwaz.jpg";
-import blogImg1 from "./assets/images/blog-img1.jpg";
-import blogImg2 from "./assets/images/blog-img2.jpg";
+import blogImg1 from "./assets/images/blog-img1.png";
+import blogImg2 from "./assets/images/blog-img2.png";
 import facebookIcon from "./assets/icons/facebook-icon.svg";
 import twitterIcon from "./assets/icons/twitter-icon.svg";
 import instagramIcon from "./assets/icons/instagram-icon.svg";
@@ -57,13 +57,16 @@ function App() {
       <header className="header-section">
         <div className="header-section-text">
           <h6>MODERN INTERIOR</h6>
-          <h1>Create your interior design.</h1>
+          <h1>
+            Create your
+            <br /> interior design.
+          </h1>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation.
           </p>
-          <Button type="primary" action="CONTACT US" />
+          <Button type="primary" action="GET STARTED" />
         </div>
         <div className="header-section-img">
           <img src={headerImg} alt="interior design" />
